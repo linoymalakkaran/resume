@@ -1,0 +1,23 @@
+{
+  "name": "firebase_website",
+  "version": "1.0.0",
+  "description": "linoy resume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linoymalakkaran/resume.git"
+  },
+  "keywords": [
+    "linoy",
+    "resume"
+  ],
+  "author": "Linoy Pappachan Malakkaran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linoymalakkaran/resume/issues"
+  },
+  "homepage": "https://github.com/linoymalakkaran/resume#readme"
+}
