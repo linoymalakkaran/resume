@@ -708,7 +708,7 @@ console.log('📄 Portfolio JavaScript loaded successfully - Linoy Pappachan Mal
 
 document.addEventListener('DOMContentLoaded', function () {
   // Set your start date here (e.g., January 2011)
-  const startDate = new Date(2011, 0); // Year, Month (0 = January)
+  const startDate = new Date(2012, 2); // Year, Month (0 = January)
   const now = new Date();
 
   // Calculate months difference
