@@ -944,6 +944,52 @@
     });
   }
 
+  function initPortfolio() {
+    const wrap = $('#products');
+    if (!wrap) return;
+    const buttons = $$('[data-filter]', wrap);
+    const groups = $$('.pf-group', wrap);
+    const status = $('.pf-filter__status', wrap);
+    buttons.forEach((btn) => btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      let shown = 0;
+      groups.forEach((group) => {
+        const match = filter === 'all' || group.dataset.track === filter;
+        const reveal = match && group.hidden;
+        group.hidden = !match;
+        if (match) shown += $$('.pf-card', group).length;
+        if (reveal && !reducedMotion()) {
+          group.classList.remove('is-entering');
+          void group.offsetWidth;
+          group.classList.add('is-entering');
+        }
+      });
+      if (status) status.textContent = `Showing ${shown} product${shown === 1 ? '' : 's'}`;
+    }));
+    wrap.addEventListener('animationend', (e) => {
+      const group = e.target instanceof Element ? e.target.closest('.pf-group.is-entering') : null;
+      if (group && e.target === group.querySelector('.pf-card:last-of-type')) group.classList.remove('is-entering');
+    });
+
+    // On small screens each track becomes a swipeable carousel; make it keyboard-scrollable only then.
+    const grids = $$('.pf-grid', wrap);
+    const syncScrollable = () => grids.forEach((grid) => {
+      const scrollable = grid.scrollWidth > grid.clientWidth + 1;
+      if (scrollable && !grid.hasAttribute('tabindex')) {
+        const title = grid.closest('.pf-group')?.querySelector('h4')?.textContent.trim() || 'Products';
+        grid.setAttribute('tabindex', '0');
+        grid.setAttribute('role', 'region');
+        grid.setAttribute('aria-label', `${title} products — scroll horizontally`);
+      } else if (!scrollable && grid.hasAttribute('tabindex')) {
+        ['tabindex', 'role', 'aria-label'].forEach((a) => grid.removeAttribute(a));
+      }
+    });
+    syncScrollable();
+    if ('ResizeObserver' in window) new ResizeObserver(syncScrollable).observe(wrap);
+    else window.addEventListener('resize', syncScrollable, { passive: true });
+  }
+
   function initCopy() {
     $$('[data-copy]').forEach((btn) => {
       btn.addEventListener('click', async () => {
@@ -999,6 +1045,7 @@
       { group: 'Navigate', label: 'Profile', icon: 'i-users', hint: '01', keywords: 'about summary bio', run: goTo('#about') },
       { group: 'Navigate', label: 'Impact', icon: 'i-trending', hint: '02', keywords: 'achievements results roi outcomes', run: goTo('#impact') },
       { group: 'Navigate', label: 'Enterprise AI platform', icon: 'i-cpu', hint: '03', keywords: 'mcp llm rag gateway agents sdlc genai agentic', run: goTo('#platform') },
+      { group: 'Navigate', label: 'Product portfolio — all 16', icon: 'i-boxes', hint: '03.1', keywords: 'products portfolio devexp mcp foundations atlas workbench agentlens ux factory acf self-service portal registry delivery hub drydock monitoring quality radar breakwater range receipts commits', run: goTo('#products') },
       { group: 'Navigate', label: 'Case studies', icon: 'i-layers', hint: '04', keywords: 'customs port emirates post work projects', run: goTo('#work') },
       { group: 'Navigate', label: 'Career timeline', icon: 'i-briefcase', hint: '05', keywords: 'experience jobs roles history ad ports', run: goTo('#experience') },
       { group: 'Navigate', label: 'Skills', icon: 'i-sparkles', hint: '06', keywords: 'stack technologies tools languages', run: goTo('#skills') },
@@ -1166,7 +1213,7 @@
   [
     initStatics, initDurations, initDecor, initReveal, initScrollSpy, initMobileMenu,
     initScramble, initMesh, initPersona, initMagnetic, initSpotlight, initConsole,
-    initArch, initHub, initOrbit, initSkillSearch, initCopy, initClock, initCommandPalette,
+    initArch, initHub, initOrbit, initSkillSearch, initPortfolio, initCopy, initClock, initCommandPalette,
   ].forEach((init) => {
     try {
       init();
