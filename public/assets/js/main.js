@@ -1025,6 +1025,7 @@
     const year = $('#year');
     if (year) year.textContent = String(new Date().getFullYear());
     $$('[data-kbd]').forEach((k) => { k.textContent = isMac ? '⌘K' : 'Ctrl K'; });
+    $$('.nav__cmd').forEach((b) => b.setAttribute('aria-label', `Quick jump ${isMac ? '⌘K' : 'Ctrl K'} — open command menu`));
   }
 
   /* ------------------------------------------------------ command palette */
