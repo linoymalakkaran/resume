@@ -200,6 +200,15 @@ b, strong { font-weight: 600; }
 }
 .skip-link:focus { transform: none; }
 
+/* Controls that only work with JavaScript stay out of the way without it. */
+html:not(.js) .nav__cmd,
+html:not(.js) #themeToggle,
+html:not(.js) .nav__burger,
+html:not(.js) .console__replay,
+html:not(.js) [data-copy],
+html:not(.js) .footer__hint,
+html:not(.js) .arch__info { display: none; }
+
 .scroll-progress {
   position: fixed;
   inset: 0 0 auto;
@@ -1272,6 +1281,7 @@ body.cmdk-open { overflow: hidden; }
     linear-gradient(180deg, var(--surface-2), var(--surface));
   box-shadow: var(--shadow);
   overflow: hidden;
+  overflow: clip;
 }
 .arch::before {
   content: "";
@@ -2326,6 +2336,17 @@ body.cmdk-open { overflow: hidden; }
   .arch__foundation .arch__label { text-align: left; }
   .arch.is-focus .arch-node:not(.is-hot) { opacity: 1; color: var(--text-3); }
   .arch.is-focus .arch-node:not(.is-hot) > * { opacity: .4; }
+  /* Stacked map: keep the explanation on screen as a bottom sheet while the map is in view. */
+  .arch__info {
+    position: sticky;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    z-index: 5;
+    background: color-mix(in srgb, var(--bg-2) 90%, transparent);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    backdrop-filter: blur(14px) saturate(1.2);
+    box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .5);
+  }
+  .arch-in-view .to-top.is-visible { opacity: 0; visibility: hidden; transform: translateY(10px); }
 }
 
 @media (max-width: 640px) {
@@ -2398,6 +2419,7 @@ body.cmdk-open { overflow: hidden; }
 /* 17. Motion & print -------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .console__replay { display: none; }
   *, *::before, *::after {
     animation-duration: .001ms !important;
     animation-iteration-count: 1 !important;

@@ -594,7 +594,7 @@
   /* -------------------------------------------------------- agent console */
   function initConsole() {
     const body = $('#console');
-    if (!body || reducedMotion()) return;
+    if (!body) return;
     const lines = $$('.console__line', body);
     const snapshot = lines.map((l) => l.innerHTML);
     const spinner = '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏';
@@ -612,6 +612,10 @@
 
     function play() {
       reset();
+      if (reducedMotion()) {
+        lines.forEach((line) => { line.style.visibility = ''; });
+        return;
+      }
       let t = 250;
       lines.forEach((line, i) => {
         const cmd = $('.c-cmd', line);
@@ -648,7 +652,7 @@
       play();
       io.disconnect();
     }, { threshold: 0.45 });
-    io.observe(body);
+    if (!reducedMotion()) io.observe(body);
     $('.console__replay')?.addEventListener('click', play);
   }
 
@@ -675,6 +679,7 @@
       adjacency.get(b).add(a);
     });
     let active = null;
+    let shown = null;
     let lastPointer = 'mouse';
 
     const rel = (el, base) => {
@@ -768,7 +773,9 @@
       const capId = node?.dataset.cap;
       $$('.cap.is-linked').forEach((c) => c.classList.remove('is-linked'));
       if (capId) document.getElementById(capId)?.classList.add('is-linked');
-      if (!info) return;
+      // Re-render the panel only when its component changes, so a focused "Details" link survives redraws.
+      if (!info || shown === id) return;
+      shown = id;
       if (!node) {
         info.innerHTML = defaultInfo;
         return;
@@ -783,19 +790,45 @@
         link.href = `#${capId}`;
         link.innerHTML = 'Details <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>';
         link.addEventListener('click', (e) => { e.preventDefault(); goToCap(capId); });
+        link.addEventListener('blur', () => { if (lastPointer === 'mouse') clearIfLeft(); });
         info.append(link);
       }
     }
+
+    // Defer clearing so focus can move to the "Details" link (or the pointer can reach it) without it vanishing.
+    function clearIfLeft() {
+      setTimeout(() => {
+        if (!arch.contains(document.activeElement) && !info?.matches(':hover')) highlight(hoverId);
+      }, 0);
+    }
+
+    function keyboardInside() {
+      const el = document.activeElement;
+      if (!(el instanceof Element) || !arch.contains(el)) return false;
+      try { return el.matches(':focus-visible'); } catch { return false; }
+    }
+    // Hover follows the mouse, but while keyboard focus is in the map only a real movement may take over:
+    // content scrolling under a parked pointer fires enter/leave without any pointermove.
+    let hoverId = null;
+    let moves = 0;
+    document.addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse') moves++; }, { passive: true });
+    const hover = (id) => (e) => {
+      if (e.pointerType !== 'mouse') return;
+      hoverId = id;
+      if (!keyboardInside()) { highlight(id); return; }
+      const seq = moves;
+      requestAnimationFrame(() => { if (moves !== seq && hoverId === id) highlight(id); });
+    };
 
     arch.addEventListener('pointerdown', (e) => { lastPointer = e.pointerType || 'mouse'; });
     document.addEventListener('pointerdown', (e) => {
       if (active && e.target instanceof Node && !arch.contains(e.target)) highlight(null);
     });
     nodes.forEach((el, id) => {
-      el.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') highlight(id); });
-      el.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') highlight(null); });
+      el.addEventListener('pointerenter', hover(id));
+      el.addEventListener('pointerleave', hover(null));
       el.addEventListener('focus', () => highlight(id));
-      el.addEventListener('blur', () => { if (lastPointer === 'mouse') highlight(null); });
+      el.addEventListener('blur', () => { if (lastPointer === 'mouse') clearIfLeft(); });
       el.addEventListener('click', (e) => {
         const keyboard = e.detail === 0;
         if (!keyboard && lastPointer !== 'mouse') {
@@ -808,8 +841,8 @@
     $$('.cap').forEach((card) => {
       const nodeEl = $(`[data-cap="${card.id}"]`, arch);
       if (!nodeEl) return;
-      card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') highlight(nodeEl.dataset.node); });
-      card.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') highlight(null); });
+      card.addEventListener('pointerenter', hover(nodeEl.dataset.node));
+      card.addEventListener('pointerleave', hover(null));
     });
 
     let timer = 0;
@@ -819,6 +852,10 @@
     };
     new ResizeObserver(schedule).observe(arch);
     document.fonts?.ready.then(schedule);
+    // Lets small screens tuck the back-to-top button away while the map's bottom sheet is showing.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => root.classList.toggle('arch-in-view', entry.isIntersecting)).observe(arch);
+    }
     build();
   }
 
@@ -1016,9 +1053,10 @@
       const now = new Date();
       el.textContent = `${fmt.format(now)} GST (UTC+4)`;
       el.dateTime = now.toISOString();
+      // Gulf Standard Time has no DST, so minute boundaries line up with UTC.
+      setTimeout(tick, 60000 - (now.getTime() % 60000) + 50);
     };
     tick();
-    setInterval(tick, 30000);
   }
 
   function initStatics() {
