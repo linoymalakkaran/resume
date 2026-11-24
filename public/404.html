@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found · Linoy Pappachan Malakkaran</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#05060b">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20261124">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.content = t === 'light' ? '#f6f7fb' : '#05060b';
+    })();
+  </script>
+  <style>
+    .nf { position: relative; isolation: isolate; min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: 2rem var(--gutter); overflow: hidden; text-align: center; }
+    .nf__code { margin: 0; font-size: clamp(6rem, 22vw, 14rem); font-weight: 700; line-height: .9; letter-spacing: -.07em; }
+    .nf__title { margin: 1.25rem 0 0; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 600; letter-spacing: -.03em; }
+    .nf__title em { font-family: var(--font-serif); font-style: italic; font-weight: 400; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nf__text { max-width: 44ch; margin: 1rem auto 0; color: var(--text-2); }
+    .nf__term { display: inline-block; margin: 1.75rem 0 0; padding: .7rem 1rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-2); font: 500 .85rem var(--font-mono); color: var(--text-2); }
+    .nf__term b { color: var(--accent-2); font-weight: 500; }
+    .nf__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div class="hero__aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div>
+      <p class="nf__code text-grad">404</p>
+      <h1 class="nf__title">This route isn’t in the <em>mesh.</em></h1>
+      <p class="nf__text">The page you’re looking for doesn’t exist or has moved. The gateway failed closed — safely.</p>
+      <p class="nf__term"><b>GET</b> <span id="nfPath">/unknown</span> → 404 · policy: fail-closed</p>
+      <div class="nf__cta">
+        <a class="btn btn--primary btn--lg" href="/">Back to the homepage</a>
+        <a class="btn btn--ghost btn--lg" href="/Linoy_Pappachan_Malakkaran_Resume.pdf" download>Résumé (PDF)</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var el = document.getElementById('nfPath');
+      if (el) el.textContent = location.pathname;
+    })();
+  </script>
+</body>
+</html>

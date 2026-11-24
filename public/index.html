@@ -1,89 +1,1091 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Linoy Pappachan Malakkaran — Solution Architect &amp; Lead AI Engineer · Abu Dhabi</title>
+  <meta name="description" content="Solution Architect, Lead AI Engineer and Engineering Manager in Abu Dhabi with 14+ years building enterprise platforms: generative &amp; agentic AI, LLM &amp; MCP gateways, RAG, platform engineering, Azure &amp; hybrid cloud.">
+  <meta name="author" content="Linoy Pappachan Malakkaran">
+  <meta name="keywords" content="Solution Architect, Lead AI Engineer, Engineering Manager, Generative AI, Agentic AI, MCP gateway, LLM gateway, RAG, Platform Engineering, Azure, AKS, TOGAF, Abu Dhabi, UAE">
+  <link rel="canonical" href="https://linoymp.web.app/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#05060b">
+  <meta name="color-scheme" content="dark light">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.9.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.9.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <meta property="og:type" content="profile">
+  <meta property="profile:first_name" content="Linoy">
+  <meta property="profile:last_name" content="Pappachan Malakkaran">
+  <meta property="og:site_name" content="Linoy Pappachan Malakkaran">
+  <meta property="og:title" content="Linoy Pappachan Malakkaran — Solution Architect &amp; Lead AI Engineer">
+  <meta property="og:description" content="14+ years building enterprise platforms. Generative &amp; agentic AI, LLM &amp; MCP gateways, RAG and platform engineering — $3.2M saved a year, 1M+ transactions a day at 99.9% uptime.">
+  <meta property="og:url" content="https://linoymp.web.app/">
+  <meta property="og:image" content="https://linoymp.web.app/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Linoy Pappachan Malakkaran — Solution Architect, Lead AI Engineer, Engineering Manager">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Linoy Pappachan Malakkaran — Solution Architect &amp; Lead AI Engineer">
+  <meta name="twitter:description" content="Generative &amp; agentic AI, LLM &amp; MCP platforms, RAG and platform engineering on Azure &amp; hybrid cloud. Based in Abu Dhabi, UAE.">
+  <meta name="twitter:image" content="https://linoymp.web.app/og-image.jpg">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      // Explicit choice wins; otherwise follow the OS light/dark setting.
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
       }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
+      d.setAttribute('data-theme', t);
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.content = t === 'light' ? '#f6f7fb' : '#05060b';
+      // Start the hero entrance once the HTML is parsed (before deferred JS), briefly waiting for fonts.
+      var loaded = function () { requestAnimationFrame(function () { d.classList.add('is-loaded'); }); };
+      document.addEventListener('readystatechange', function () {
+        if (document.readyState !== 'interactive') return;
+        var fonts = document.fonts && document.fonts.ready;
+        if (fonts) Promise.race([fonts, new Promise(function (r) { setTimeout(r, 250); })]).then(loaded);
+        else loaded();
       });
-    </script>
-  </body>
+      // If the main script never initialises, reveal content instead of leaving it hidden.
+      setTimeout(function () { if (!window.__siteReady) d.classList.add('no-anim'); }, 3500);
+    })();
+  </script>
+
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20261124">
+  <script src="/assets/js/main.js?v=20261124.2" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": "https://linoymp.web.app/",
+    "dateModified": "2026-11-24",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://linoymp.web.app/#person",
+      "name": "Linoy Pappachan Malakkaran",
+      "alternateName": "Linoy Malakkaran",
+      "givenName": "Linoy",
+      "familyName": "Malakkaran",
+      "jobTitle": ["Solution Architect", "Lead AI Engineer", "Engineering Manager"],
+      "description": "Hands-on Solution Architect and Lead AI Engineer with 14+ years designing, building and leading enterprise platforms across ports, logistics, government, postal and payments.",
+      "url": "https://linoymp.web.app/",
+      "image": "https://linoymp.web.app/assets/img/linoy-portrait-800.jpg",
+      "email": "mailto:linoymalakkaran@gmail.com",
+      "telephone": "+971565921499",
+      "address": { "@type": "PostalAddress", "addressLocality": "Abu Dhabi", "addressCountry": "AE" },
+      "worksFor": { "@type": "Organization", "name": "AD Ports Group" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Bharathiar University" },
+        { "@type": "CollegeOrUniversity", "name": "Mahatma Gandhi University" },
+        { "@type": "CollegeOrUniversity", "name": "Calicut University" }
+      ],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Microsoft Certified: Azure Solutions Architect Expert (AZ-305)", "recognizedBy": { "@type": "Organization", "name": "Microsoft" } },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Microsoft Certified: Azure Administrator Associate (AZ-104)", "recognizedBy": { "@type": "Organization", "name": "Microsoft" } },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Microsoft Certified: Azure Fundamentals (AZ-900)", "recognizedBy": { "@type": "Organization", "name": "Microsoft" } },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "TOGAF Enterprise Architecture Practitioner", "recognizedBy": { "@type": "Organization", "name": "The Open Group" } },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Oracle Database 10g", "recognizedBy": { "@type": "Organization", "name": "Oracle" } }
+      ],
+      "award": "Best Technical Employee Award, Emirates Post Group (2019)",
+      "knowsLanguage": ["English", "Hindi", "Malayalam"],
+      "knowsAbout": ["Solution Architecture", "Enterprise Architecture", "TOGAF", "Generative AI", "Agentic AI", "Large Language Models", "Model Context Protocol", "Retrieval-Augmented Generation", "LLMOps", "MLOps", "Responsible AI", "Platform Engineering", "Microsoft Azure", "Kubernetes", "Enterprise Integration", "Event-Driven Architecture", "DevSecOps", "Engineering Management"],
+      "sameAs": ["https://www.linkedin.com/in/linoymalakkaran/", "https://github.com/linoymalakkaran"]
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+    <symbol id="i-boxes" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-branch" viewBox="0 0 24 24"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+    <symbol id="i-trending" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><path d="m15.48 12.89 1.51 8.53a.5.5 0 0 1-.81.47l-3.58-2.69a1 1 0 0 0-1.2 0l-3.59 2.69a.5.5 0 0 1-.81-.47l1.51-8.53"/><circle cx="12" cy="8" r="6"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></symbol>
+    <symbol id="i-anchor" viewBox="0 0 24 24"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+  </svg>
+
+  <!-- ============================== NAVIGATION ============================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Linoy Pappachan Malakkaran — back to top">
+        <svg class="nav__logo" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a594ff"/><stop offset=".55" stop-color="#5b8cff"/><stop offset="1" stop-color="#2fd4ee"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="17" fill="#07080f"/>
+          <rect x="1.5" y="1.5" width="61" height="61" rx="15.5" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+          <path d="M17 20v24h11" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M33 44V20l7.5 13L48 20v24" fill="none" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav__name">Linoy <span>Malakkaran</span></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">Profile</a>
+        <a href="#impact">Impact</a>
+        <a href="#platform">AI Platform</a>
+        <a href="#work">Case studies</a>
+        <a href="#experience">Career</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Credentials</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="nav__cmd" type="button" data-cmdk-open aria-label="Open command menu">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          <span class="nav__cmd-label">Quick jump</span>
+          <kbd data-kbd>⌘K</kbd>
+        </button>
+        <button class="icon-btn" type="button" id="themeToggle" aria-label="Switch to light theme">
+          <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn--primary btn--sm nav__contact" href="#contact">Let’s talk</a>
+        <button class="icon-btn nav__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile">
+      <a href="#about"><span>01</span>Profile</a>
+      <a href="#impact"><span>02</span>Impact</a>
+      <a href="#platform"><span>03</span>AI Platform</a>
+      <a href="#work"><span>04</span>Case studies</a>
+      <a href="#experience"><span>05</span>Career</a>
+      <a href="#skills"><span>06</span>Skills</a>
+      <a href="#credentials"><span>07</span>Credentials</a>
+      <a href="#contact"><span>08</span>Contact</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a class="btn btn--primary" href="/Linoy_Pappachan_Malakkaran_Resume.pdf" download>
+        <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Résumé (PDF)
+      </a>
+      <a class="btn btn--ghost" href="mailto:linoymalakkaran@gmail.com">
+        <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email
+      </a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <canvas class="hero__mesh" id="mesh" aria-hidden="true"></canvas>
+      <div class="hero__aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <a class="status-pill hero-in" href="#experience" style="--d:0">
+            <span class="status-pill__dot" aria-hidden="true"></span>
+            <span class="status-pill__text">Lead AI Engineer / Solution Architect <span class="status-pill__sep" aria-hidden="true">·</span> AD Ports Group</span>
+          </a>
+
+          <h1 class="hero__title" id="hero-title">
+            <span class="line"><span class="hero-in" style="--d:1">Linoy Pappachan</span></span>
+            <span class="line"><span class="hero-in text-grad" style="--d:2">Malakkaran</span></span>
+          </h1>
+
+          <p class="hero__role hero-in" style="--d:3">
+            <span class="sr-only">Solution Architect, Lead AI Engineer and Engineering Manager</span>
+            <span class="hero__prompt" aria-hidden="true">&gt;_</span>
+            <span class="scramble" aria-hidden="true" data-words='["Solution Architect","Lead AI Engineer","Engineering Manager"]'>Solution Architect</span>
+          </p>
+
+          <p class="hero__lede hero-in" style="--d:4">
+            I design, build and lead enterprise platforms — taking generative and agentic AI from a
+            multi-agent proof of concept to a <strong>governed, 16&#8209;product enterprise AI platform</strong>.
+          </p>
+
+          <p class="hero__sectors hero-in" style="--d:5">
+            <span>Ports</span><span>Logistics</span><span>Government</span><span>Postal</span><span>Payments</span>
+          </p>
+
+          <div class="hero__cta hero-in" style="--d:6">
+            <a class="btn btn--primary btn--lg magnetic" href="#platform">
+              Explore the AI platform
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="/Linoy_Pappachan_Malakkaran_Resume.pdf" download>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+              Résumé (PDF)
+            </a>
+          </div>
+
+          <ul class="hero__social hero-in" style="--d:7" aria-label="Profiles">
+            <li><a class="icon-btn" href="https://www.linkedin.com/in/linoymalakkaran/" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a class="icon-btn" href="https://github.com/linoymalakkaran" target="_blank" rel="noopener" aria-label="GitHub profile"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a class="icon-btn" href="mailto:linoymalakkaran@gmail.com" aria-label="Send an email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+            <li><a class="icon-btn" href="https://calendly.com/linoymalakkaran" target="_blank" rel="noopener" aria-label="Book a call on Calendly"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></a></li>
+            <li class="hero__location"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg> Abu Dhabi, UAE</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual hero-in" style="--d:3">
+          <figure class="portrait" data-tilt>
+            <div class="portrait__frame">
+              <picture>
+                <source type="image/webp" srcset="/assets/img/linoy-portrait-480.webp 480w, /assets/img/linoy-portrait-800.webp 800w" sizes="(max-width: 960px) 300px, 400px">
+                <img src="/assets/img/linoy-portrait-800.jpg" width="800" height="914" alt="Portrait of Linoy Pappachan Malakkaran" fetchpriority="high">
+              </picture>
+              <span class="portrait__glare" aria-hidden="true"></span>
+            </div>
+            <figcaption class="portrait__caption">
+              <img src="/assets/img/badges/az-305.webp" width="44" height="44" alt="" loading="lazy">
+              <span>
+                <strong>Azure Solutions Architect Expert</strong>
+                <small>TOGAF® Practitioner</small>
+              </span>
+            </figcaption>
+          </figure>
+          <div class="float-chip float-chip--a" aria-hidden="true"><svg class="icon"><use href="#i-plug"/></svg><span><b>137</b> MCP tools</span></div>
+          <div class="float-chip float-chip--b" aria-hidden="true"><svg class="icon"><use href="#i-trending"/></svg><span><b>$3.2M</b> saved / yr</span></div>
+          <div class="float-chip float-chip--c" aria-hidden="true"><svg class="icon"><use href="#i-activity"/></svg><span><b>99.9%</b> uptime</span></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <dl class="hero__stats hero-in" style="--d:8">
+          <div class="stat">
+            <dt>Years building enterprise platforms</dt>
+            <dd><span data-count="14" data-suffix="+">14+</span></dd>
+          </div>
+          <div class="stat">
+            <dt>Saved a year by production AI</dt>
+            <dd><span data-count="3.2" data-prefix="$" data-suffix="M" data-decimals="1">$3.2M</span></dd>
+          </div>
+          <div class="stat">
+            <dt>Transactions a day at 99.9% uptime</dt>
+            <dd><span>1M+</span></dd>
+          </div>
+          <div class="stat">
+            <dt>Engineers led across programmes</dt>
+            <dd><span data-count="20" data-suffix="+">20+</span></dd>
+          </div>
+        </dl>
+      </div>
+
+      <a class="scroll-cue" href="#about" aria-label="Scroll to profile"><span></span></a>
+    </section>
+
+    <!-- Tech marquee -->
+    <div class="ticker" aria-label="Technologies I work with">
+      <div class="ticker__track">
+        <ul class="ticker__list">
+          <li>LangGraph</li><li>LiteLLM</li><li>Model Context Protocol</li><li>Azure OpenAI</li><li>Azure AI Foundry</li><li>RAG · pgvector</li><li>Langfuse</li><li>Temporal</li><li>Apache Kafka</li><li>EventStoreDB</li><li>AKS</li><li>Argo CD</li><li>Flux</li><li>Terraform</li><li>Helm</li><li>OpenTelemetry</li><li>Prometheus</li><li>Grafana</li><li>TensorFlow</li><li>PyTorch</li><li>OpenCV</li><li>Spark</li><li>Airflow</li><li>Entra ID</li><li>Kong</li><li>GraphQL</li>
+        </ul>
+        <ul class="ticker__list" aria-hidden="true">
+          <li>LangGraph</li><li>LiteLLM</li><li>Model Context Protocol</li><li>Azure OpenAI</li><li>Azure AI Foundry</li><li>RAG · pgvector</li><li>Langfuse</li><li>Temporal</li><li>Apache Kafka</li><li>EventStoreDB</li><li>AKS</li><li>Argo CD</li><li>Flux</li><li>Terraform</li><li>Helm</li><li>OpenTelemetry</li><li>Prometheus</li><li>Grafana</li><li>TensorFlow</li><li>PyTorch</li><li>OpenCV</li><li>Spark</li><li>Airflow</li><li>Entra ID</li><li>Kong</li><li>GraphQL</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============================== 01 PROFILE ============================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">01</span>Profile</p>
+          <h2 class="section-title" id="about-title">Hands-on architect who <em>owns AI</em> end to end.</h2>
+        </header>
+
+        <div class="about">
+          <div class="about__text" data-reveal>
+            <p class="about__lead">
+              I’m a hands-on Solution Architect and Lead AI Engineer with <strong>14+ years</strong> (11+ in the UAE)
+              designing, building and leading enterprise platforms across ports, logistics, government, postal and payments.
+            </p>
+            <p>
+              I own generative and agentic AI end to end — from a multi-agent proof of concept to a 16&#8209;product enterprise
+              AI platform with large language model (LLM) and Model Context Protocol (MCP) gateways and retrieval-augmented
+              generation (RAG). I brought ML and computer vision to regulated customs clearance ($3.2M saved a year) and
+              design systems for 1M+ transactions a day at 99.9% uptime.
+            </p>
+            <p>
+              I’ve led teams of 20+ engineers and win C&#8209;level, government and vendor sign-off.
+            </p>
+            <ul class="facts">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg><span><b>Abu Dhabi, UAE</b>11+ years in the UAE</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg><span><b>Azure Solutions Architect Expert</b>TOGAF® practitioner</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span><b>Teams of 20+ engineers</b>$3M national programme</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-languages"/></svg><span><b>English · Hindi · Malayalam</b>Professional · Advanced · Native</span></li>
+            </ul>
+          </div>
+
+          <div class="console" data-reveal style="--i:1">
+            <div class="console__bar">
+              <span class="console__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <p class="console__title">profile-agent — zsh</p>
+              <button class="console__replay" type="button" aria-label="Replay console animation">
+                <svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>
+              </button>
+            </div>
+            <div class="console__body" id="console">
+              <div class="console__line console__line--cmd"><span class="c-prompt">~ $</span> <span class="c-cmd">agent run profile --summarise</span></div>
+              <div class="console__line"><span class="c-arrow">›</span><span class="c-key">planner</span><span class="c-val">14+ yrs · 11+ in UAE · 5 sectors</span></div>
+              <div class="console__line"><span class="c-arrow">›</span><span class="c-key">mcp-gateway</span><span class="c-val">137 tools · 8 backends · SSO + audit</span></div>
+              <div class="console__line"><span class="c-arrow">›</span><span class="c-key">llm-gateway</span><span class="c-val">quotas · PII masking · fail-closed</span></div>
+              <div class="console__line"><span class="c-arrow">›</span><span class="c-key">rag</span><span class="c-val">17 projects · hybrid search · citations</span></div>
+              <div class="console__line"><span class="c-arrow">›</span><span class="c-key">evals</span><span class="c-val">recall@k ✓ nDCG ✓ faithfulness ✓</span></div>
+              <div class="console__line"><span class="c-arrow">›</span><span class="c-key">impact</span><span class="c-val">$3.2M/yr · 1M+ tx/day · 99.9% uptime</span></div>
+              <div class="console__line console__line--ok"><span class="c-arrow">✓</span><span class="c-key">result</span><span class="c-val">Architect who ships governed AI.</span></div>
+              <div class="console__line console__line--cmd"><span class="c-prompt">~ $</span> <span class="caret" aria-hidden="true"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="competencies" data-reveal>
+          <h3 class="competencies__label">Core competencies</h3>
+          <ul class="competencies__list sr-only">
+            <li>Solution Architecture</li><li>Enterprise Architecture (TOGAF)</li><li>Cloud Architecture (Azure, AWS, GCP)</li><li>Cost Optimization</li>
+            <li>Generative &amp; Agentic AI</li><li>LLM, RAG &amp; MCP Platforms</li><li>LLMOps &amp; MLOps</li><li>Responsible AI</li><li>Platform Engineering</li>
+            <li>Enterprise Integration</li><li>ERP &amp; CRM Integration</li><li>API Management</li><li>Microservices</li><li>Event-Driven Architecture</li>
+            <li>Infrastructure as Code</li><li>High Availability &amp; Disaster Recovery</li><li>DevSecOps &amp; Zero Trust</li><li>Agile &amp; DORA</li>
+            <li>Engineering Management</li><li>Team Leadership</li><li>Stakeholder Management</li><li>Vendor Management</li><li>Digital Transformation</li>
+          </ul>
+          <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+              <span>Solution Architecture</span><span>Enterprise Architecture (TOGAF)</span><span>Cloud Architecture (Azure, AWS, GCP)</span><span>Cost Optimization</span><span>Generative &amp; Agentic AI</span><span>LLM, RAG &amp; MCP Platforms</span><span>LLMOps &amp; MLOps</span><span>Responsible AI</span><span>Platform Engineering</span><span>Enterprise Integration</span><span>ERP &amp; CRM Integration</span><span>API Management</span>
+              <span>Solution Architecture</span><span>Enterprise Architecture (TOGAF)</span><span>Cloud Architecture (Azure, AWS, GCP)</span><span>Cost Optimization</span><span>Generative &amp; Agentic AI</span><span>LLM, RAG &amp; MCP Platforms</span><span>LLMOps &amp; MLOps</span><span>Responsible AI</span><span>Platform Engineering</span><span>Enterprise Integration</span><span>ERP &amp; CRM Integration</span><span>API Management</span>
+            </div>
+          </div>
+          <div class="marquee marquee--reverse" aria-hidden="true">
+            <div class="marquee__track">
+              <span>Microservices</span><span>Event-Driven Architecture</span><span>Infrastructure as Code</span><span>High Availability &amp; Disaster Recovery</span><span>DevSecOps &amp; Zero Trust</span><span>Agile &amp; DORA</span><span>Engineering Management</span><span>Team Leadership</span><span>Stakeholder Management</span><span>Vendor Management</span><span>Digital Transformation</span>
+              <span>Microservices</span><span>Event-Driven Architecture</span><span>Infrastructure as Code</span><span>High Availability &amp; Disaster Recovery</span><span>DevSecOps &amp; Zero Trust</span><span>Agile &amp; DORA</span><span>Engineering Management</span><span>Team Leadership</span><span>Stakeholder Management</span><span>Vendor Management</span><span>Digital Transformation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 02 IMPACT ============================== -->
+    <section class="section" id="impact" aria-labelledby="impact-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">02</span>Impact</p>
+          <h2 class="section-title" id="impact-title">Outcomes, <em>measured</em> in production.</h2>
+          <p class="section-sub">Four threads run through my work: AI with real ROI, platforms at scale, reliability at lower cost — and teams that ship.</p>
+        </header>
+
+        <div class="bento">
+          <article class="tile tile--roi spotlight" data-reveal>
+            <div class="tile__top">
+              <span class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></span>
+              <h3 class="tile__title">Production AI with measurable ROI</h3>
+            </div>
+            <p class="tile__stat"><span data-count="3.2" data-prefix="$" data-suffix="M" data-decimals="1">$3.2M</span><small>saved a year</small></p>
+            <p class="tile__text">A customs risk-scoring system assessing <b>15K+ cargo declarations daily</b> at <b>89% accuracy</b>, cutting physical inspections by <b>50%</b>.</p>
+            <div class="meter" aria-hidden="true">
+              <div class="meter__row"><span>Model accuracy</span><div class="meter__bar"><i style="--w:89%"></i></div><b>89%</b></div>
+              <div class="meter__row"><span>Physical inspections</span><div class="meter__bar meter__bar--warm"><i style="--w:50%"></i></div><b>−50%</b></div>
+            </div>
+          </article>
+
+          <article class="tile tile--platform spotlight" data-reveal style="--i:1">
+            <div class="tile__top">
+              <span class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+              <h3 class="tile__title">Enterprise AI platform at scale</h3>
+            </div>
+            <p class="tile__stat"><span data-count="16">16</span><small>products</small></p>
+            <p class="tile__text">An MCP gateway (<b>137 tools</b>), a governed LLM gateway, a RAG knowledge platform and a <b>190+ skill</b> AI SDLC catalog for five AI coding tools.</p>
+            <div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+
+          <article class="tile tile--scale spotlight" data-reveal>
+            <div class="tile__top">
+              <span class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span>
+              <h3 class="tile__title">Scale, reliability &amp; cost</h3>
+            </div>
+            <p class="tile__stat"><span>1M+</span><small>transactions a day</small></p>
+            <ul class="tile__list">
+              <li><b>99.9%</b> uptime</li>
+              <li><b>75%</b> fewer deployment failures with zero-downtime GitOps</li>
+              <li><b>$2M</b> a year saved through hybrid-cloud migration</li>
+              <li><b>$50M+/year</b> PCI DSS payment platform at <b>99.95%</b> success</li>
+            </ul>
+            <div class="uptime" aria-hidden="true"></div>
+          </article>
+
+          <article class="tile tile--lead spotlight" data-reveal style="--i:1">
+            <div class="tile__top">
+              <span class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <h3 class="tile__title">Engineering leadership</h3>
+            </div>
+            <p class="tile__stat"><span data-count="11000" data-suffix="+">11,000+</span><small>merged PRs</small></p>
+            <p class="tile__text">Led teams of <b>20+ engineers</b> and a <b>$3M national programme</b>. AI-augmented delivery sustained 11,000+ merged PRs across <b>60+ repositories</b> with <b>3,000+ automated test suites</b>.</p>
+            <div class="tile__kpis">
+              <div><b data-count="20" data-suffix="+">20+</b><span>engineers led</span></div>
+              <div><b data-count="60" data-suffix="+">60+</b><span>repositories</span></div>
+              <div><b data-count="3000" data-suffix="+">3,000+</b><span>test suites</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 03 AI PLATFORM ============================== -->
+    <section class="section section--platform" id="platform" aria-labelledby="platform-title">
+      <div class="container">
+        <header class="section-head section-head--split" data-reveal>
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">03</span>Flagship · AD Ports Group · 06/2025 – Present</p>
+            <h2 class="section-title" id="platform-title">An enterprise AI platform, <em>governed</em> by design.</h2>
+          </div>
+          <p class="section-sub">
+            16 internal products on private Azure Kubernetes Service (AKS) — AI SDLC, MCP and LLM gateways, RAG,
+            self-service and DevSecOps. As Solution Architect &amp; Engineering Lead I proved the value with a multi-agent
+            POC, then scaled it into a governed enterprise platform.
+          </p>
+        </header>
+
+        <ul class="ribbon" data-reveal aria-label="Platform at a glance">
+          <li><b>16</b> products</li>
+          <li><b>137</b> MCP tools</li>
+          <li><b>8</b> backends</li>
+          <li><b>190+</b> task skills</li>
+          <li><b>29</b> role-based agents</li>
+          <li><b>33</b> presets</li>
+          <li><b>17</b> RAG projects</li>
+          <li><b>8</b> DAST scanners</li>
+          <li><b>50+</b> ADRs</li>
+        </ul>
+
+        <div class="arch" id="arch" data-reveal>
+          <svg class="arch__wires" aria-hidden="true"></svg>
+
+          <div class="arch__col arch__col--clients">
+            <p class="arch__label">AI clients</p>
+            <button type="button" class="arch-node" data-node="copilot" data-title="GitHub Copilot" data-desc="Uses the MCP gateway’s 137 tools and the AI SDLC catalog’s skills, agents and presets — behind Entra ID SSO, policies and audit."><i class="arch-node__dot"></i>GitHub Copilot</button>
+            <button type="button" class="arch-node" data-node="claude" data-title="Claude Code" data-desc="Connected to the enterprise MCP gateway and served task skills, role-based agents and presets from the AI SDLC catalog."><i class="arch-node__dot"></i>Claude Code</button>
+            <button type="button" class="arch-node" data-node="cursor" data-title="Cursor" data-desc="Connected to the MCP gateway with per-request credentials; receives AI SDLC catalog skills and presets."><i class="arch-node__dot"></i>Cursor</button>
+            <button type="button" class="arch-node" data-node="codex" data-title="Codex" data-desc="Receives task skills, role-based agents and presets generated from one source by the AI SDLC catalog."><i class="arch-node__dot"></i>Codex</button>
+            <button type="button" class="arch-node" data-node="windsurf" data-title="Windsurf" data-desc="Receives task skills, role-based agents and presets generated from one source by the AI SDLC catalog."><i class="arch-node__dot"></i>Windsurf</button>
+            <button type="button" class="arch-node arch-node--accent" data-node="workbench" data-cap="cap-workbench" data-title="Enterprise AI Workbench" data-desc="Agents, MCP tools and document authoring built on LibreChat, with Langfuse LLM observability."><i class="arch-node__dot"></i>AI Workbench</button>
+          </div>
+
+          <div class="arch__col arch__col--core">
+            <p class="arch__label">Governed AI plane</p>
+            <button type="button" class="arch-node arch-node--core" data-node="mcp" data-cap="cap-mcp" data-title="Enterprise MCP Gateway" data-desc="Exposes 137 tools from 8 backends to GitHub Copilot, Claude and Cursor with Entra ID SSO, per-request credentials, policies and audit.">
+              <span class="arch-node__title"><svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg>MCP Gateway</span>
+              <span class="arch-node__meta">137 tools · 8 backends</span>
+            </button>
+            <button type="button" class="arch-node arch-node--core" data-node="sdlc" data-cap="cap-sdlc" data-title="AI SDLC Catalog" data-desc="190+ task skills, 29 role-based agents and 33 presets generated from one source for five AI coding tools, shipped via VS Code and browser extensions with a PII guard.">
+              <span class="arch-node__title"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>AI SDLC Catalog</span>
+              <span class="arch-node__meta">190+ skills · 29 agents · 33 presets</span>
+            </button>
+            <button type="button" class="arch-node arch-node--core" data-node="llm" data-cap="cap-llm" data-title="Central LLM Gateway" data-desc="The single governed route to models: routing, quotas, rate limits, cost control, PII masking, fail-closed policies and sovereign-model readiness.">
+              <span class="arch-node__title"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg>LLM Gateway</span>
+              <span class="arch-node__meta">LiteLLM · quotas · PII masking</span>
+            </button>
+            <button type="button" class="arch-node arch-node--core" data-node="rag" data-cap="cap-rag" data-title="RAG Knowledge Platform" data-desc="Multi-tenant for 17 projects: pgvector semantic search fused with full-text search and re-ranking, cited answers and fail-closed access.">
+              <span class="arch-node__title"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>RAG Platform</span>
+              <span class="arch-node__meta">17 projects · cited answers</span>
+            </button>
+          </div>
+
+          <div class="arch__col arch__col--systems">
+            <p class="arch__label">Backends &amp; models</p>
+            <button type="button" class="arch-node" data-node="ado" data-title="Azure DevOps" data-desc="Exposed as governed MCP tools — and the source of DORA and quality evidence for engineering intelligence."><i class="arch-node__dot"></i>Azure DevOps</button>
+            <button type="button" class="arch-node" data-node="jira" data-title="Jira" data-desc="Exposed to AI coding assistants as governed MCP tools."><i class="arch-node__dot"></i>Jira</button>
+            <button type="button" class="arch-node" data-node="k8s" data-title="Kubernetes" data-desc="Cluster operations exposed as governed MCP tools; the platform itself runs on private AKS."><i class="arch-node__dot"></i>Kubernetes</button>
+            <button type="button" class="arch-node" data-node="sonar" data-title="SonarQube" data-desc="Code-quality backend exposed as governed MCP tools."><i class="arch-node__dot"></i>SonarQube</button>
+            <button type="button" class="arch-node" data-node="checkmarx" data-title="Checkmarx" data-desc="Security-scanning backend exposed as governed MCP tools."><i class="arch-node__dot"></i>Checkmarx</button>
+            <button type="button" class="arch-node" data-node="figma" data-title="Figma" data-desc="Design backend exposed as governed MCP tools."><i class="arch-node__dot"></i>Figma</button>
+            <button type="button" class="arch-node arch-node--model" data-node="aoai" data-title="Azure OpenAI" data-desc="Reached only through the governed LLM gateway."><i class="arch-node__dot"></i>Azure OpenAI</button>
+            <button type="button" class="arch-node arch-node--model" data-node="foundry" data-title="Azure AI Foundry" data-desc="Reached through the LLM gateway, with sovereign-model readiness."><i class="arch-node__dot"></i>Azure AI Foundry</button>
+            <button type="button" class="arch-node arch-node--model" data-node="pgvector" data-title="pgvector + full-text" data-desc="Hybrid retrieval: semantic vectors fused with full-text search and re-ranking, evaluated on recall@k, nDCG and faithfulness."><i class="arch-node__dot"></i>pgvector + full-text</button>
+          </div>
+
+          <div class="arch__foundation">
+            <p class="arch__label">Foundation</p>
+            <div class="arch__chips">
+              <button type="button" class="arch-node arch-node--chip" data-node="aks" data-cap="cap-idp" data-title="Private AKS" data-desc="All 16 internal products run on private Azure Kubernetes Service.">Private AKS</button>
+              <button type="button" class="arch-node arch-node--chip" data-node="idp" data-cap="cap-idp" data-title="Internal developer platform" data-desc="Self-service portal with approvals and audit, AKS cluster vending with per-cluster Argo CD and Helm, Terraform-managed Flux GitOps.">Developer platform · cluster vending</button>
+              <button type="button" class="arch-node arch-node--chip" data-node="devsecops" data-cap="cap-devsecops" data-title="DevSecOps" data-desc="DORA and quality evidence, LLM-assisted PR review, and governed DAST orchestrating 8 scanners in isolated Kubernetes jobs.">DevSecOps · 8 DAST scanners</button>
+              <button type="button" class="arch-node arch-node--chip" data-node="obs" data-cap="cap-workbench" data-title="Observability &amp; AIOps" data-desc="Langfuse LLM observability plus AIOps monitoring with AI incident diagnosis for AKS, GitOps and apps.">Langfuse · AIOps</button>
+              <button type="button" class="arch-node arch-node--chip" data-node="rai" data-cap="cap-rai" data-title="Responsible AI baseline" data-desc="Guardrails, human-in-the-loop approvals, data-leakage controls, workload identity, default-deny networks, SBOM and digest-pinned releases.">Responsible AI guardrails</button>
+              <button type="button" class="arch-node arch-node--chip" data-node="delivery" data-cap="cap-delivery" data-title="AI-augmented delivery" data-desc="AI coding agents ship under PR review and release gates; NFRs governed through C4 models and 50+ ADRs.">PR &amp; release gates · 50+ ADRs</button>
+            </div>
+          </div>
+
+          <div class="arch__info" aria-live="polite">
+            <p class="arch__info-default"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg> Hover or tap any component to trace how requests flow through the governed AI plane.</p>
+          </div>
+        </div>
+
+        <div class="caps">
+          <article class="cap cap--origin spotlight" id="cap-poc" data-reveal>
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+              <div><p class="cap__kicker">Where it started</p><h3>Multi-agent POC → governed platform</h3></div>
+            </div>
+            <p>Proved value with a multi-agent POC — LangGraph agents, Temporal workflows, Kafka and EventStoreDB event sourcing — that turned BRDs and HLDs into auditable specs, code and tests, then scaled it into a governed enterprise platform.</p>
+            <ul class="tags"><li>LangGraph</li><li>Temporal</li><li>Kafka</li><li>EventStoreDB</li></ul>
+          </article>
+
+          <article class="cap spotlight" id="cap-mcp" data-reveal style="--i:1">
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg></span>
+              <div><p class="cap__kicker">137 tools · 8 backends</p><h3>Enterprise MCP gateway</h3></div>
+            </div>
+            <p>Architected the enterprise MCP gateway exposing 137 tools from 8 backends (Azure DevOps, Jira, Kubernetes, SonarQube, Checkmarx, Figma) to GitHub Copilot, Claude and Cursor — with Entra ID SSO, per-request credentials, policies and audit.</p>
+            <ul class="tags"><li>MCP</li><li>Entra ID SSO</li><li>Policies</li><li>Audit</li></ul>
+          </article>
+
+          <article class="cap spotlight" id="cap-llm" data-reveal style="--i:2">
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg></span>
+              <div><p class="cap__kicker">Single governed route to models</p><h3>Central LLM gateway</h3></div>
+            </div>
+            <p>Designed the central LLM gateway (LiteLLM, Azure OpenAI, Azure AI Foundry): routing, quotas, rate limits, cost control, PII masking, fail-closed policies and sovereign-model readiness.</p>
+            <ul class="tags"><li>LiteLLM</li><li>Azure OpenAI</li><li>Azure AI Foundry</li><li>PII masking</li></ul>
+          </article>
+
+          <article class="cap spotlight" id="cap-sdlc" data-reveal>
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+              <div><p class="cap__kicker">190+ skills · 29 agents · 33 presets</p><h3>AI SDLC catalog</h3></div>
+            </div>
+            <p>Built the AI SDLC catalog — generated from one source for GitHub Copilot, Claude Code, Codex, Cursor and Windsurf — and shipped it via VS Code and browser extensions with a PII guard.</p>
+            <ul class="tags"><li>GitHub Copilot</li><li>Claude Code</li><li>Codex</li><li>Cursor</li><li>Windsurf</li></ul>
+          </article>
+
+          <article class="cap spotlight" id="cap-rag" data-reveal style="--i:1">
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span>
+              <div><p class="cap__kicker">Multi-tenant · 17 projects</p><h3>RAG knowledge platform</h3></div>
+            </div>
+            <p>Engineered semantic search (pgvector) fused with full-text search and re-ranking, cited answers, fail-closed access, and evaluation on recall@k, nDCG and faithfulness.</p>
+            <ul class="tags"><li>pgvector</li><li>Hybrid search</li><li>Re-ranking</li><li>Evals</li></ul>
+          </article>
+
+          <article class="cap spotlight" id="cap-workbench" data-reveal style="--i:2">
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-bot"/></svg></span>
+              <div><p class="cap__kicker">Built on LibreChat</p><h3>AI workbench &amp; AIOps</h3></div>
+            </div>
+            <p>Delivered the enterprise AI workbench (agents, MCP tools, document authoring) with Langfuse LLM observability, plus AIOps monitoring with AI incident diagnosis for AKS, GitOps and apps.</p>
+            <ul class="tags"><li>LibreChat</li><li>Langfuse</li><li>AIOps</li></ul>
+          </article>
+
+          <article class="cap spotlight" id="cap-idp" data-reveal>
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-boxes"/></svg></span>
+              <div><p class="cap__kicker">Adopted by 9 apps</p><h3>Internal developer platform</h3></div>
+            </div>
+            <p>Self-service portal with approvals and audit, AKS cluster vending with per-cluster Argo CD and Helm charts, Terraform-managed Flux GitOps, and a project registry adopted by 9 apps.</p>
+            <ul class="tags"><li>AKS</li><li>Argo CD</li><li>Helm</li><li>Terraform</li><li>Flux</li></ul>
+          </article>
+
+          <article class="cap spotlight" id="cap-devsecops" data-reveal style="--i:1">
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span>
+              <div><p class="cap__kicker">8 scanners · isolated K8s jobs</p><h3>Engineering intelligence &amp; DevSecOps</h3></div>
+            </div>
+            <p>DORA and quality evidence across Azure DevOps, LLM-assisted PR review, and governed DAST orchestrating 8 scanners (OWASP ZAP, Nuclei, sqlmap) in isolated Kubernetes jobs.</p>
+            <ul class="tags"><li>DORA</li><li>OWASP ZAP</li><li>Nuclei</li><li>sqlmap</li></ul>
+          </article>
+
+          <article class="cap spotlight" id="cap-rai" data-reveal style="--i:2">
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+              <div><p class="cap__kicker">With audit evidence</p><h3>Responsible AI &amp; security baseline</h3></div>
+            </div>
+            <p>Guardrails, human-in-the-loop approvals, data-leakage controls, workload identity, default-deny networks, SBOM and digest-pinned releases.</p>
+            <ul class="tags"><li>Guardrails</li><li>HITL</li><li>Workload identity</li><li>SBOM</li></ul>
+          </article>
+
+          <article class="cap cap--wide spotlight" id="cap-delivery" data-reveal>
+            <div class="cap__head">
+              <span class="cap__icon"><svg class="icon" aria-hidden="true"><use href="#i-branch"/></svg></span>
+              <div><p class="cap__kicker">C4 models · 50+ ADRs</p><h3>AI-augmented delivery model</h3></div>
+            </div>
+            <p>Established a delivery model where AI coding agents ship under PR review and release gates, and governed non-functional requirements — security, scalability, cost — through C4 models and 50+ architecture decision records.</p>
+            <ul class="tags"><li>PR review gates</li><li>Release gates</li><li>C4</li><li>ADRs</li><li>NFR governance</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 04 CASE STUDIES ============================== -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">04</span>Case studies</p>
+          <h2 class="section-title" id="work-title">High-stakes systems in <em>regulated</em> domains.</h2>
+          <p class="section-sub">Customs, port operations and national postal services — where availability, auditability and compliance are not optional.</p>
+        </header>
+
+        <!-- Customs AI -->
+        <article class="case" id="case-customs" data-reveal>
+          <div class="case__body">
+            <p class="case__meta"><span>AD Ports Group</span><span>Solution Architect</span><span>01/2022 – 12/2023</span></p>
+            <h3 class="case__title">Customs AI Risk Assessment</h3>
+            <p class="case__summary">Bringing machine learning and computer vision to regulated customs clearance — owning the end-to-end architecture for ML risk scoring of cargo declarations: data ingestion, model training, model serving and TOS integration.</p>
+            <dl class="case__metrics">
+              <div><dt>Declarations scored daily</dt><dd>15K+</dd></div>
+              <div><dt>Model accuracy</dt><dd>89%</dd></div>
+              <div><dt>Fewer physical inspections</dt><dd>50%</dd></div>
+              <div><dt>Saved a year</dt><dd>$3.2M</dd></div>
+            </dl>
+            <ul class="case__list">
+              <li>Designed Spark and Airflow pipelines with data-quality rules; worked with data scientists to productionize TensorFlow scoring models and OpenCV image analysis.</li>
+              <li>Defined MLOps end to end: versioning, evaluation, monitoring, retraining and decision audit.</li>
+              <li>Designed fail-safe clearance so declarations keep flowing during scoring outages; led architecture reviews and agreed risk thresholds with customs, security and operations teams.</li>
+            </ul>
+            <ul class="tags"><li>Spark</li><li>Airflow</li><li>TensorFlow</li><li>OpenCV</li><li>MLOps</li><li>TOS integration</li></ul>
+          </div>
+          <div class="case__visual case__visual--gauge" aria-hidden="true">
+            <svg class="gauge" viewBox="0 0 220 220">
+              <defs>
+                <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#a594ff"/><stop offset=".6" stop-color="#3ad6f0"/><stop offset="1" stop-color="#45e3a5"/>
+                </linearGradient>
+              </defs>
+              <circle class="gauge__track" cx="110" cy="110" r="88"/>
+              <circle class="gauge__value" cx="110" cy="110" r="88" pathLength="100" style="--v:89"/>
+            </svg>
+            <div class="gauge__label"><b>89%</b><span>scoring accuracy</span></div>
+            <div class="gauge__foot">
+              <div><b>15K+</b><span>declarations / day</span></div>
+              <div><b>−50%</b><span>inspections</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Port operations -->
+        <article class="case case--flip" id="case-port" data-reveal>
+          <div class="case__body">
+            <p class="case__meta"><span>AD Ports Group</span><span>Solution Architect</span><span>04/2020 – Present</span></p>
+            <h3 class="case__title">Port Operations &amp; Integration Platform</h3>
+            <p class="case__summary">Integrates TOS, customs, gate, yard and billing with Abu Dhabi Customs, the Municipality and the Federal Customs Authority. I own domain boundaries, the integration landscape, NFRs and the roadmap.</p>
+            <dl class="case__metrics">
+              <div><dt>Transactions a day</dt><dd>1M+</dd></div>
+              <div><dt>Uptime</dt><dd>99.9%</dd></div>
+              <div><dt>Saved a year — hybrid cloud</dt><dd>$2M</dd></div>
+              <div><dt>Fewer deployment failures</dt><dd>75%</dd></div>
+            </dl>
+            <ul class="case__list">
+              <li>API orchestration over REST, SOAP and GraphQL microservices with Kafka and Oracle AQ handling 1M+ transactions a day at 99.9% uptime.</li>
+              <li>Deployed OpenCV computer vision with MQTT device integration for OCR gate automation and equipment monitoring.</li>
+              <li>Designed hybrid cloud across Azure, Oracle Cloud and on-premises (migration, HA/DR) plus a zero-trust API gateway and identity layer (OAuth 2.0, Entra ID SSO); ensured PCI DSS, SOC 2 and ISR compliance.</li>
+              <li>Set CI/CD, GitOps and observability standards (Argo CD, Helm, OpenTelemetry, Prometheus, Grafana); introduced OutSystems low-code, cutting feature delivery time by 40%.</li>
+              <li>Built a Spark/Airflow data lake feeding Power BI KPIs on vessel turnaround, yard utilization and gate performance.</li>
+            </ul>
+            <ul class="tags"><li>Kafka</li><li>Oracle AQ</li><li>GraphQL</li><li>MQTT</li><li>OpenCV</li><li>Argo CD</li><li>OpenTelemetry</li><li>Power BI</li></ul>
+          </div>
+          <div class="case__visual case__visual--hub" aria-hidden="true">
+            <svg class="hub" id="hub" viewBox="0 0 400 400">
+              <defs>
+                <radialGradient id="hubCore" cx="50%" cy="40%" r="60%">
+                  <stop offset="0" stop-color="#6d5cff"/><stop offset="1" stop-color="#1b1f3a"/>
+                </radialGradient>
+              </defs>
+              <circle class="hub__ring" cx="200" cy="200" r="150"/>
+              <circle class="hub__ring hub__ring--inner" cx="200" cy="200" r="96"/>
+              <g class="hub__spokes">
+                <path id="sp0" d="M200 200L200 50"/>
+                <path id="sp1" d="M200 200L306 94"/>
+                <path id="sp2" d="M200 200L350 200"/>
+                <path id="sp3" d="M200 200L306 306"/>
+                <path id="sp4" d="M200 200L200 350"/>
+                <path id="sp5" d="M200 200L94 306"/>
+                <path id="sp6" d="M200 200L50 200"/>
+                <path id="sp7" d="M200 200L94 94"/>
+              </g>
+              <g class="hub__pulses"></g>
+              <g class="hub__node"><rect x="180" y="36" width="40" height="28" rx="14"/><text x="200" y="54">TOS</text></g>
+              <g class="hub__node"><rect x="274" y="80" width="64" height="28" rx="14"/><text x="306" y="98">Customs</text></g>
+              <g class="hub__node"><rect x="327" y="186" width="46" height="28" rx="14"/><text x="350" y="204">Gate</text></g>
+              <g class="hub__node"><rect x="283" y="292" width="46" height="28" rx="14"/><text x="306" y="310">Yard</text></g>
+              <g class="hub__node"><rect x="170" y="336" width="60" height="28" rx="14"/><text x="200" y="354">Billing</text></g>
+              <g class="hub__node hub__node--ext"><rect x="34" y="292" width="120" height="28" rx="14"/><text x="94" y="310">Federal Customs</text></g>
+              <g class="hub__node hub__node--ext"><rect x="6" y="186" width="92" height="28" rx="14"/><text x="52" y="204">Municipality</text></g>
+              <g class="hub__node hub__node--ext"><rect x="52" y="80" width="84" height="28" rx="14"/><text x="94" y="98">AD Customs</text></g>
+              <circle class="hub__core-glow" cx="200" cy="200" r="64"/>
+              <circle class="hub__core" cx="200" cy="200" r="50"/>
+              <text class="hub__core-title" x="200" y="196">1M+</text>
+              <text class="hub__core-sub" x="200" y="214">tx / day</text>
+            </svg>
+            <div class="hub__legend"><span><i></i>Port systems</span><span><i class="ext"></i>Government</span></div>
+          </div>
+        </article>
+
+        <!-- Emirates Post -->
+        <article class="case" id="case-epg" data-reveal>
+          <div class="case__body">
+            <p class="case__meta"><span>Emirates Post Group · Dubai</span><span>Technical Architect</span><span>12/2016 – 03/2020</span></p>
+            <h3 class="case__title">National Postal Digital Transformation</h3>
+            <p class="case__summary">Led architecture and a $3M budget for a national postal digital-transformation programme, directing 20+ engineers, integrating 192 countries via Universal Postal Union (UPU) standards and briefing C-level and government leaders.</p>
+            <dl class="case__metrics">
+              <div><dt>Programme budget</dt><dd>$3M</dd></div>
+              <div><dt>Countries integrated (UPU)</dt><dd>192</dd></div>
+              <div><dt>POS volume a year</dt><dd>$50M+</dd></div>
+              <div><dt>Payment success</dt><dd>99.95%</dd></div>
+            </dl>
+            <ul class="case__list">
+              <li>Designed microservices-based government digital services: the federal UAE Courier Licensing System, PO Box and e-PO Box services, courier booking, Emirates ID kiosks and CRM integration for customer enquiries.</li>
+              <li>Architected a POS platform processing $50M+ a year at 99.95% success (PCI DSS, Central Bank), a CyberSource payment gateway for all services, and an integration framework with API governance and a developer portal.</li>
+            </ul>
+            <ul class="tags"><li>Microservices</li><li>UPU standards</li><li>PCI DSS</li><li>CyberSource</li><li>API governance</li><li>CRM</li></ul>
+            <p class="case__award"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg> Best Technical Employee Award, Emirates Post Group (2019)</p>
+          </div>
+          <div class="case__visual case__visual--orbit" aria-hidden="true">
+            <svg class="orbit" id="orbit" viewBox="0 0 400 400"></svg>
+            <div class="orbit__label"><b>192</b><span>countries via UPU</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================== 05 EXPERIENCE ============================== -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">05</span>Career</p>
+          <h2 class="section-title" id="experience-title">A career built on <em>platforms that last.</em></h2>
+          <p class="section-sub">From software engineer to Lead AI Engineer and Solution Architect — across India and the UAE.</p>
+        </header>
+
+        <div class="timeline">
+          <span class="timeline__progress" aria-hidden="true"></span>
+          <ol class="timeline__list">
+            <li class="role role--current" data-reveal>
+              <div class="role__head">
+                <div>
+                  <h3 class="role__company">AD Ports Group <span>(Abu Dhabi Ports)</span></h3>
+                  <p class="role__title">Lead AI Engineer / Solution Architect</p>
+                </div>
+                <div class="role__when">
+                  <span class="role__dates">04/2020 – Present</span>
+                  <span class="role__duration" data-start="2020-04" data-end="present"></span>
+                  <span class="role__place"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Abu Dhabi, UAE</span>
+                </div>
+              </div>
+              <p class="role__summary">Lead a cross-functional team of 15+ engineers and own solution architecture and technical leadership for the Group’s AI, platform and port operations estate, presenting roadmap, risk and cost to senior leadership.</p>
+              <div class="programs">
+                <a class="program" href="#platform">
+                  <span class="program__icon"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg></span>
+                  <span class="program__text"><b>Enterprise AI Platform &amp; Engineering</b><small>Solution Architect &amp; Engineering Lead · 06/2025 – Present</small></span>
+                  <svg class="icon program__go" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                </a>
+                <a class="program" href="#case-customs">
+                  <span class="program__icon"><svg class="icon" aria-hidden="true"><use href="#i-scan"/></svg></span>
+                  <span class="program__text"><b>Customs AI Risk Assessment</b><small>Solution Architect · 01/2022 – 12/2023</small></span>
+                  <svg class="icon program__go" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                </a>
+                <a class="program" href="#case-port">
+                  <span class="program__icon"><svg class="icon" aria-hidden="true"><use href="#i-anchor"/></svg></span>
+                  <span class="program__text"><b>Port Operations &amp; Integration Platform</b><small>Solution Architect · 04/2020 – Present</small></span>
+                  <svg class="icon program__go" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                </a>
+              </div>
+            </li>
+
+            <li class="role" data-reveal>
+              <div class="role__head">
+                <div>
+                  <h3 class="role__company">Emirates Post Group</h3>
+                  <p class="role__title">Technical Architect</p>
+                </div>
+                <div class="role__when">
+                  <span class="role__dates">12/2016 – 03/2020</span>
+                  <span class="role__duration" data-start="2016-12" data-end="2020-03"></span>
+                  <span class="role__place"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Dubai, UAE</span>
+                </div>
+              </div>
+              <p class="role__summary">Led architecture and a $3M budget for a national postal digital-transformation programme — 20+ engineers, 192 countries via UPU standards, government digital services and a $50M+/year POS platform at 99.95% success.</p>
+              <div class="role__foot">
+                <span class="role__badge"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg>Best Technical Employee Award (2019)</span>
+                <a class="link-arrow" href="#case-epg">Read the case study <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </li>
+
+            <li class="role" data-reveal>
+              <div class="role__head">
+                <div>
+                  <h3 class="role__company">Key Business Solution <span>(Keybs)</span></h3>
+                  <p class="role__title">Senior Software Engineer (Architecture Lead)</p>
+                </div>
+                <div class="role__when">
+                  <span class="role__dates">04/2016 – 11/2016</span>
+                  <span class="role__duration" data-start="2016-04" data-end="2016-11"></span>
+                  <span class="role__place"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Dubai, UAE</span>
+                </div>
+              </div>
+              <p class="role__summary">Designed kiosk and POS payment software with cash and card hardware integration for Angola, Bahrain and Saudi Arabia.</p>
+            </li>
+
+            <li class="role" data-reveal>
+              <div class="role__head">
+                <div>
+                  <h3 class="role__company">Enterprise System Analysis Technology</h3>
+                  <p class="role__title">Software Engineer</p>
+                </div>
+                <div class="role__when">
+                  <span class="role__dates">08/2015 – 04/2016</span>
+                  <span class="role__duration" data-start="2015-08" data-end="2016-04"></span>
+                  <span class="role__place"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Abu Dhabi, UAE</span>
+                </div>
+              </div>
+              <p class="role__summary">Led architecture of an ERP suite for the Al Baraka group (HR, user rights, workflows), lifting efficiency by 15%.</p>
+            </li>
+
+            <li class="role" data-reveal>
+              <div class="role__head">
+                <div>
+                  <h3 class="role__company">Suyati Technologies · Orion India System · Code Matrix Solutions</h3>
+                  <p class="role__title">Senior Software Engineer</p>
+                </div>
+                <div class="role__when">
+                  <span class="role__dates">06/2012 – 08/2015</span>
+                  <span class="role__duration" data-start="2012-06" data-end="2015-08"></span>
+                  <span class="role__place"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>India</span>
+                </div>
+              </div>
+              <p class="role__summary">Built KPMG audit analytics and ETL tooling (50% faster processing), the SOCXO social SaaS on Azure and a healthcare SaaS.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 06 SKILLS ============================== -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-head section-head--split" data-reveal>
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">06</span>Skills</p>
+            <h2 class="section-title" id="skills-title">The <em>toolbox</em> behind the work.</h2>
+          </div>
+          <div class="skills-search">
+            <label class="sr-only" for="skillSearch">Search skills</label>
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <input id="skillSearch" type="search" placeholder="Search the stack — e.g. Kafka" autocomplete="off" spellcheck="false">
+            <output class="skills-search__count" for="skillSearch" aria-live="polite"></output>
+          </div>
+        </header>
+
+        <div class="skills" id="skillsGrid">
+          <article class="skill-card spotlight" data-reveal>
+            <h3><span class="skill-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>AI &amp; Machine Learning</h3>
+            <ul class="chips">
+              <li>LangGraph</li><li>LangChain</li><li>LiteLLM</li><li>RAG</li><li>pgvector</li><li>Vector databases</li><li>Embeddings</li><li>Re-ranking</li><li>Prompt engineering</li><li>Langfuse</li><li>Hugging Face</li><li>PyTorch</li><li>TensorFlow</li><li>OpenCV</li><li>MLflow</li><li>Azure OpenAI</li><li>Azure AI Foundry</li><li>AWS Bedrock</li>
+            </ul>
+          </article>
+          <article class="skill-card spotlight" data-reveal style="--i:1">
+            <h3><span class="skill-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg></span>Languages &amp; Data</h3>
+            <ul class="chips">
+              <li>Python</li><li>TypeScript</li><li>C#</li><li>Java</li><li>SQL</li><li>FastAPI</li><li>Node.js</li><li>NestJS</li><li>.NET</li><li>Spring Boot</li><li>React</li><li>Next.js</li><li>Angular</li><li>PostgreSQL</li><li>Oracle</li><li>SQL Server</li><li>MongoDB</li><li>Redis</li><li>Elasticsearch</li><li>Spark</li><li>Airflow</li><li>Power BI</li>
+            </ul>
+          </article>
+          <article class="skill-card spotlight" data-reveal style="--i:2">
+            <h3><span class="skill-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg></span>Integration &amp; Messaging</h3>
+            <ul class="chips">
+              <li>ERP integration</li><li>CRM integration</li><li>Terminal Operating System (TOS)</li><li>Payment-gateway integration</li><li>REST</li><li>SOAP</li><li>GraphQL</li><li>gRPC</li><li>EDI</li><li>Kong API gateway</li><li>Apache Kafka</li><li>RabbitMQ</li><li>Oracle AQ</li><li>EventStoreDB</li><li>MQTT</li><li>K2</li><li>Camunda BPM</li>
+            </ul>
+          </article>
+          <article class="skill-card spotlight" data-reveal>
+            <h3><span class="skill-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg></span>Cloud &amp; DevOps</h3>
+            <ul class="chips">
+              <li>Azure AKS</li><li>Entra ID</li><li>Key Vault</li><li>Azure Monitor</li><li>Service Bus</li><li>Synapse</li><li>AWS</li><li>GCP</li><li>Oracle Cloud</li><li>Kubernetes</li><li>Docker</li><li>Helm</li><li>Terraform</li><li>Bicep</li><li>Argo CD</li><li>Flux</li><li>Azure DevOps</li><li>Harbor</li><li>OpenTelemetry</li><li>Prometheus</li><li>Grafana</li>
+            </ul>
+          </article>
+          <article class="skill-card spotlight" data-reveal style="--i:1">
+            <h3><span class="skill-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>Architecture &amp; Security</h3>
+            <ul class="chips">
+              <li>TOGAF</li><li>C4</li><li>ADRs</li><li>Domain-Driven Design</li><li>Azure Well-Architected Framework</li><li>FinOps</li><li>OAuth 2.0</li><li>OIDC</li><li>OpenFGA</li><li>HashiCorp Vault</li><li>SonarQube</li><li>Checkmarx</li><li>Trivy</li><li>OWASP ZAP</li><li>PCI DSS</li><li>SOC 2</li><li>ISR</li><li>UAE PDPL</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 07 CREDENTIALS ============================== -->
+    <section class="section" id="credentials" aria-labelledby="credentials-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">07</span>Credentials</p>
+          <h2 class="section-title" id="credentials-title">Certified, educated &amp; <em>recognised.</em></h2>
+        </header>
+
+        <div class="creds">
+          <div class="creds__certs">
+            <h3 class="creds__label"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>Certifications</h3>
+            <ul class="certs">
+              <li class="cert cert--featured spotlight" data-reveal>
+                <img src="/assets/img/badges/az-305.webp" width="72" height="72" alt="Microsoft Certified: Azure Solutions Architect Expert badge" loading="lazy">
+                <div><p class="cert__issuer">Microsoft Certified · Expert</p><h4>Azure Solutions Architect Expert</h4><p class="cert__code">AZ-305</p></div>
+              </li>
+              <li class="cert spotlight" data-reveal style="--i:1">
+                <span class="cert__emblem" aria-hidden="true">
+                  <svg viewBox="0 0 72 72"><defs><linearGradient id="togafGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a594ff"/><stop offset="1" stop-color="#3ad6f0"/></linearGradient></defs><path d="M36 4 64 20v32L36 68 8 52V20Z" fill="none" stroke="url(#togafGrad)" stroke-width="3"/><path d="M36 16 54 26v20L36 56 18 46V26Z" fill="url(#togafGrad)" opacity=".16"/><text x="36" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="currentColor">EA</text></svg>
+                </span>
+                <div><p class="cert__issuer">The Open Group</p><h4>TOGAF® Enterprise Architecture Practitioner</h4><p class="cert__code">Enterprise Architecture</p></div>
+              </li>
+              <li class="cert spotlight" data-reveal style="--i:2">
+                <img src="/assets/img/badges/az-104.webp" width="72" height="72" alt="Microsoft Certified: Azure Administrator Associate badge" loading="lazy">
+                <div><p class="cert__issuer">Microsoft Certified · Associate</p><h4>Azure Administrator Associate</h4><p class="cert__code">AZ-104</p></div>
+              </li>
+              <li class="cert spotlight" data-reveal>
+                <img src="/assets/img/badges/az-900.webp" width="72" height="72" alt="Microsoft Certified: Azure Fundamentals badge" loading="lazy">
+                <div><p class="cert__issuer">Microsoft Certified · Fundamentals</p><h4>Azure Fundamentals</h4><p class="cert__code">AZ-900</p></div>
+              </li>
+              <li class="cert spotlight" data-reveal style="--i:1">
+                <span class="cert__emblem" aria-hidden="true">
+                  <svg viewBox="0 0 72 72"><rect x="8" y="22" width="56" height="28" rx="14" fill="none" stroke="#ff6b5b" stroke-width="3"/><ellipse cx="36" cy="36" rx="14" ry="7" fill="#ff6b5b" opacity=".18"/><text x="36" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" fill="currentColor">10g</text></svg>
+                </span>
+                <div><p class="cert__issuer">Oracle</p><h4>Oracle Database 10g</h4><p class="cert__code">Database</p></div>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="award spotlight" data-reveal style="--i:1">
+            <span class="award__icon"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+            <p class="award__kicker">Award · 2019</p>
+            <h3 class="award__title">Best Technical Employee Award</h3>
+            <p class="award__org">Emirates Post Group</p>
+          </aside>
+
+          <div class="edu" data-reveal>
+            <h3 class="creds__label"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg>Education</h3>
+            <ul class="edu__list">
+              <li><span class="edu__year">2014</span><div><h4>Master of Business Administration (MBA)</h4><p>Bharathiar University</p></div></li>
+              <li><span class="edu__year">2012</span><div><h4>Master of Computer Applications (MCA)</h4><p>Mahatma Gandhi University</p></div></li>
+              <li><span class="edu__year">2009</span><div><h4>Bachelor of Science in Computer Science</h4><p>Calicut University</p></div></li>
+            </ul>
+          </div>
+
+          <div class="langs" data-reveal style="--i:1">
+            <h3 class="creds__label"><svg class="icon" aria-hidden="true"><use href="#i-languages"/></svg>Languages</h3>
+            <ul class="langs__list">
+              <li><span>English</span><b>Professional</b></li>
+              <li><span>Hindi</span><b>Advanced</b></li>
+              <li><span>Malayalam</span><b>Native</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 08 CONTACT ============================== -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact" data-reveal>
+          <div class="contact__glow" aria-hidden="true"></div>
+          <p class="eyebrow eyebrow--center"><span class="eyebrow__num">08</span>Contact</p>
+          <h2 class="contact__title" id="contact-title">Let’s build what’s <em>next.</em></h2>
+          <p class="contact__sub">Open to conversations about solution architecture, enterprise AI platforms and engineering leadership.</p>
+
+          <div class="contact__email">
+            <a href="mailto:linoymalakkaran@gmail.com" class="contact__email-link">linoymalakkaran@gmail.com</a>
+            <button class="icon-btn" type="button" data-copy="linoymalakkaran@gmail.com" aria-label="Copy email address">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+            </button>
+          </div>
+
+          <ul class="contact__grid">
+            <li><a class="contact-card" href="tel:+971565921499"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span><b>Phone</b>+971 56 592 1499</span></a></li>
+            <li><a class="contact-card" href="https://www.linkedin.com/in/linoymalakkaran/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg><span><b>LinkedIn</b>in/linoymalakkaran</span></a></li>
+            <li><a class="contact-card" href="https://github.com/linoymalakkaran" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span><b>GitHub</b>linoymalakkaran</span></a></li>
+            <li><a class="contact-card" href="https://calendly.com/linoymalakkaran" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span><b>Book a call</b>Schedule via Calendly</span></a></li>
+          </ul>
+
+          <div class="contact__cta">
+            <a class="btn btn--primary btn--lg magnetic" href="mailto:linoymalakkaran@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Start a conversation</a>
+            <a class="btn btn--ghost btn--lg" href="/Linoy_Pappachan_Malakkaran_Resume.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Résumé (PDF)</a>
+          </div>
+
+          <p class="contact__meta">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Abu Dhabi, UAE</span>
+            <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><time id="localTime">GST (UTC+4)</time></span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Linoy Pappachan Malakkaran · Abu Dhabi, UAE</p>
+      <p class="footer__hint">Press <kbd data-kbd>⌘K</kbd> to jump anywhere</p>
+      <a class="footer__top" href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+    </div>
+  </footer>
+
+  <!-- Command palette -->
+  <div class="cmdk" id="cmdk" hidden>
+    <div class="cmdk__backdrop" data-cmdk-close></div>
+    <div class="cmdk__panel" role="dialog" aria-modal="true" aria-label="Command menu">
+      <div class="cmdk__search">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="cmdkInput" type="text" placeholder="Jump to a section or run an action…" autocomplete="off" spellcheck="false"
+               role="combobox" aria-expanded="true" aria-controls="cmdkList" aria-autocomplete="list">
+        <kbd>Esc</kbd>
+      </div>
+      <ul class="cmdk__list" id="cmdkList" role="listbox" aria-label="Commands"></ul>
+      <div class="cmdk__foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> select</span><span><kbd>esc</kbd> close</span></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
 </html>
