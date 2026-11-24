@@ -106,9 +106,11 @@
 
   /* ------------------------------------------------- nav, progress, spy */
   const nav = $('#nav');
-  const progressBar = $('.scroll-progress span');
+  const hero = $('.hero');
+  const toTop = $('.to-top');
   const timeline = $('.timeline');
   let scrollQueued = false;
+  let heroHx = 0;
 
   function updateTimeline() {
     if (!timeline) return;
@@ -125,7 +127,14 @@
       const y = window.scrollY;
       nav?.classList.toggle('is-scrolled', y > 16);
       const max = document.documentElement.scrollHeight - innerHeight;
-      progressBar?.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : '0');
+      root.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : '0');
+      toTop?.classList.toggle('is-visible', y > innerHeight * 0.9);
+      // Hero content recedes slightly while it scrolls out of view.
+      if (hero && !reducedMotion()) {
+        const hx = clamp(y / Math.max(1, hero.offsetHeight), 0, 1);
+        if (hx < 1 || heroHx < 1) hero.style.setProperty('--hx', hx.toFixed(4));
+        heroHx = hx;
+      }
       updateTimeline();
     });
   }
@@ -535,27 +544,26 @@
   }
 
   /* ------------------------------------------- pointer-driven micro-motion */
-  function initTilt() {
-    if (!finePointer.matches || reducedMotion()) return;
-    $$('[data-tilt]').forEach((el) => {
-      let raf = 0;
-      el.addEventListener('pointermove', (e) => {
-        const r = el.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width - 0.5;
-        const py = (e.clientY - r.top) / r.height - 0.5;
-        cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(() => {
-          el.style.setProperty('--rx', `${(-py * 9).toFixed(2)}deg`);
-          el.style.setProperty('--ry', `${(px * 11).toFixed(2)}deg`);
-          el.style.setProperty('--gx', `${((px + 0.5) * 100).toFixed(1)}%`);
-          el.style.setProperty('--gy', `${((py + 0.5) * 100).toFixed(1)}%`);
-        });
+  /* Depth parallax: orbit layers drift with the pointer at different rates. */
+  function initPersona() {
+    const persona = $('#persona');
+    if (!persona || !hero || !finePointer.matches || reducedMotion()) return;
+    let raf = 0;
+    hero.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const r = persona.getBoundingClientRect();
+        const px = clamp((e.clientX - (r.left + r.width / 2)) / innerWidth, -0.5, 0.5);
+        const py = clamp((e.clientY - (r.top + r.height / 2)) / innerHeight, -0.5, 0.5);
+        persona.style.setProperty('--px', px.toFixed(3));
+        persona.style.setProperty('--py', py.toFixed(3));
       });
-      el.addEventListener('pointerleave', () => {
-        cancelAnimationFrame(raf);
-        el.style.setProperty('--rx', '0deg');
-        el.style.setProperty('--ry', '0deg');
-      });
+    }, { passive: true });
+    hero.addEventListener('pointerleave', () => {
+      cancelAnimationFrame(raf);
+      persona.style.setProperty('--px', '0');
+      persona.style.setProperty('--py', '0');
     });
   }
 
@@ -1157,7 +1165,7 @@
   /* ----------------------------------------------------------------- boot */
   [
     initStatics, initDurations, initDecor, initReveal, initScrollSpy, initMobileMenu,
-    initScramble, initMesh, initTilt, initMagnetic, initSpotlight, initConsole,
+    initScramble, initMesh, initPersona, initMagnetic, initSpotlight, initConsole,
     initArch, initHub, initOrbit, initSkillSearch, initCopy, initClock, initCommandPalette,
   ].forEach((init) => {
     try {

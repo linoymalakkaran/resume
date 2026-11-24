@@ -19,7 +19,7 @@
   <meta property="og:title" content="Linoy Pappachan Malakkaran — Solution Architect &amp; Lead AI Engineer">
   <meta property="og:description" content="14+ years building enterprise platforms. Generative &amp; agentic AI, LLM &amp; MCP gateways, RAG and platform engineering — $3.2M saved a year, 1M+ transactions a day at 99.9% uptime.">
   <meta property="og:url" content="https://linoymp.web.app/">
-  <meta property="og:image" content="https://linoymp.web.app/og-image.jpg">
+  <meta property="og:image" content="https://linoymp.web.app/og-image.jpg?v=2">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Linoy Pappachan Malakkaran — Solution Architect, Lead AI Engineer, Engineering Manager">
@@ -27,7 +27,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Linoy Pappachan Malakkaran — Solution Architect &amp; Lead AI Engineer">
   <meta name="twitter:description" content="Generative &amp; agentic AI, LLM &amp; MCP platforms, RAG and platform engineering on Azure &amp; hybrid cloud. Based in Abu Dhabi, UAE.">
-  <meta name="twitter:image" content="https://linoymp.web.app/og-image.jpg">
+  <meta name="twitter:image" content="https://linoymp.web.app/og-image.jpg?v=2">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -61,8 +61,8 @@
   </script>
 
   <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20261124">
-  <script src="/assets/js/main.js?v=20261124.2" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20261124.3">
+  <script src="/assets/js/main.js?v=20261124.3" defer></script>
 
   <script type="application/ld+json">
   {
@@ -280,25 +280,35 @@
         </div>
 
         <div class="hero__visual hero-in" style="--d:3">
-          <figure class="portrait" data-tilt>
-            <div class="portrait__frame">
-              <picture>
-                <source type="image/webp" srcset="/assets/img/linoy-portrait-480.webp 480w, /assets/img/linoy-portrait-800.webp 800w" sizes="(max-width: 960px) 300px, 400px">
-                <img src="/assets/img/linoy-portrait-800.jpg" width="800" height="914" alt="Portrait of Linoy Pappachan Malakkaran" fetchpriority="high">
-              </picture>
-              <span class="portrait__glare" aria-hidden="true"></span>
+          <div class="persona" id="persona">
+            <div class="persona__orbit persona__orbit--outer" aria-hidden="true">
+              <span class="sat" style="--a:-70deg"><i><svg class="icon"><use href="#i-plug"/></svg></i></span>
+              <span class="sat" style="--a:50deg"><i><svg class="icon"><use href="#i-shield"/></svg></i></span>
+              <span class="sat" style="--a:170deg"><i><svg class="icon"><use href="#i-cloud"/></svg></i></span>
             </div>
-            <figcaption class="portrait__caption">
-              <img src="/assets/img/badges/az-305.webp" width="44" height="44" alt="" loading="lazy">
-              <span>
-                <strong>Azure Solutions Architect Expert</strong>
-                <small>TOGAF® Practitioner</small>
+            <div class="persona__orbit persona__orbit--inner" aria-hidden="true">
+              <span class="sat" style="--a:-10deg"><i><svg class="icon"><use href="#i-route"/></svg></i></span>
+              <span class="sat" style="--a:110deg"><i><svg class="icon"><use href="#i-book"/></svg></i></span>
+              <span class="sat" style="--a:230deg"><i><svg class="icon"><use href="#i-bot"/></svg></i></span>
+            </div>
+            <figure class="persona__figure">
+              <span class="persona__glow" aria-hidden="true"></span>
+              <span class="persona__disc" aria-hidden="true"></span>
+              <span class="persona__ring" aria-hidden="true"></span>
+              <span class="persona__clip">
+                <img src="/assets/img/linoy-cutout-560.webp" srcset="/assets/img/linoy-cutout-280.webp 280w, /assets/img/linoy-cutout-560.webp 560w" sizes="(max-width: 960px) 90px, 250px" width="560" height="614" alt="Portrait of Linoy Pappachan Malakkaran" fetchpriority="high">
               </span>
-            </figcaption>
-          </figure>
-          <div class="float-chip float-chip--a" aria-hidden="true"><svg class="icon"><use href="#i-plug"/></svg><span><b>137</b> MCP tools</span></div>
-          <div class="float-chip float-chip--b" aria-hidden="true"><svg class="icon"><use href="#i-trending"/></svg><span><b>$3.2M</b> saved / yr</span></div>
-          <div class="float-chip float-chip--c" aria-hidden="true"><svg class="icon"><use href="#i-activity"/></svg><span><b>99.9%</b> uptime</span></div>
+              <figcaption class="persona__badge">
+                <img src="/assets/img/badges/az-305.webp" width="34" height="34" alt="" loading="lazy">
+                <span>
+                  <strong>Azure Solutions Architect Expert</strong>
+                  <small>TOGAF® Practitioner</small>
+                </span>
+              </figcaption>
+            </figure>
+            <div class="float-chip float-chip--a" aria-hidden="true"><svg class="icon"><use href="#i-plug"/></svg><span><b>137</b> MCP tools</span></div>
+            <div class="float-chip float-chip--b" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg><span><b>16</b>-product platform</span></div>
+          </div>
         </div>
       </div>
 
@@ -1064,12 +1074,57 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year">2026</span> Linoy Pappachan Malakkaran · Abu Dhabi, UAE</p>
-      <p class="footer__hint">Press <kbd data-kbd>⌘K</kbd> to jump anywhere</p>
-      <a class="footer__top" href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="nav__brand" href="#top" aria-label="Linoy Pappachan Malakkaran — back to top">
+            <svg class="nav__logo" viewBox="0 0 64 64" aria-hidden="true">
+              <rect width="64" height="64" rx="17" fill="#07080f"/>
+              <rect x="1.5" y="1.5" width="61" height="61" rx="15.5" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+              <path d="M17 20v24h11" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M33 44V20l7.5 13L48 20v24" fill="none" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="nav__name">Linoy <span>Malakkaran</span></span>
+          </a>
+          <p class="footer__tagline">Solution Architect, Lead AI Engineer and Engineering Manager — designing governed enterprise AI platforms from Abu Dhabi.</p>
+        </div>
+        <nav class="footer__col" aria-label="Footer">
+          <h2 class="footer__heading">Explore</h2>
+          <ul>
+            <li><a href="#about">Profile</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#platform">AI Platform</a></li>
+            <li><a href="#work">Case studies</a></li>
+            <li><a href="#experience">Career</a></li>
+            <li><a href="#credentials">Credentials</a></li>
+          </ul>
+        </nav>
+        <div class="footer__col">
+          <h2 class="footer__heading">Connect</h2>
+          <ul>
+            <li><a href="mailto:linoymalakkaran@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/linoymalakkaran/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/linoymalakkaran" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://calendly.com/linoymalakkaran" target="_blank" rel="noopener">Book a call</a></li>
+            <li><a href="/Linoy_Pappachan_Malakkaran_Resume.pdf" download>Résumé (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> Linoy Pappachan Malakkaran · Abu Dhabi, UAE</p>
+        <p class="footer__hint">Press <kbd data-kbd>⌘K</kbd> to jump anywhere</p>
+      </div>
     </div>
+    <p class="footer__wordmark" aria-hidden="true">Malakkaran</p>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Back to top">
+    <svg class="to-top__ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="22"/>
+      <circle class="to-top__progress" cx="24" cy="24" r="22"/>
+    </svg>
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+  </a>
 
   <!-- Command palette -->
   <div class="cmdk" id="cmdk" hidden>
